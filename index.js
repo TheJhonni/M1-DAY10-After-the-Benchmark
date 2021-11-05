@@ -1,3 +1,27 @@
+
+const optionOne = document.getElementById("one");
+const optionTwo = document.getElementById("two");
+const optionThree = document.getElementById("three");
+const optionFour = document.getElementById("four");
+const optionTrue = document.getElementById("true");
+const optionFalse = document.getElementById("false");
+const userScore = document.getElementById("user-score");
+const totScore = document.getElementById("tot-score");
+const score = document.getElementById("score");
+const questionsHtml = document.getElementById("questions");
+
+optionOne.addEventListener("click",optionFunctionOne);
+optionTwo.addEventListener("click",optionFunctionTwo);
+optionThree.addEventListener("click",optionFunctionThree);
+optionFour.addEventListener("click",optionFunctionFour);
+optionTrue.addEventListener("click", optionFunctionTrue);
+optionFalse.addEventListener("click", optionFunctionFalse);
+
+// Keep a global variable score for the user score
+
+let currentQuestion = 0;
+let GenericScore = 0;
+
 const questions = [
     {
       category: "Science: Computers",
@@ -97,6 +121,62 @@ const questions = [
       incorrect_answers: ["Python", "C", "Jakarta"],
     },
   ];
+
+// Keep a variable questionNumber for the question the user is answering
+  let questionNumber = questions.length
+
+
+// The player must guess correctly a certain amount of questions
+// When questionNumber is bigger then the available questions, present the score
+  
+    if (questionNumber>questions.length && incorrect_answers === (questions.lenght / 2)) {
+      score.classList.remove("hide");
+    };
+
+// Each correct answer gives him one point
+
+  const quizStart = function () {
+      currentQuestion = 0;
+      questionsHtml.innerHTML = questions[currentQuestion];
+      optionTrue.innerHTML = questions[currentQuestion].type[Boolean];
+      optionTrue.onclick = () => {
+          let abc =0;
+          if(questions[currentQuestion].correct_answer[abc]) {
+            GenericScore++;
+                  optionTrue.classList.add("true");
+          }
+
+          userScore.innerHTML = score;
+          if(questions[currentQuestion].incorrect_answers[abc]) {
+            console.log("WRONG ANSWER!")  
+            next();
+            optionTrue.classList.add("false");
+          }
+    }
+    optionFalse.innerHTML = questions[currentQuestion].type[Boolean];
+    optionFalse.onclick = () => {
+        let abc = 0;
+        if(questions[currentQuestion].correct_answer[abc]) {
+            GenericScore++;
+                optionFalse.classList.add("true");
+        }
+        userScore.innerHTML = score;
+        if(questions[currentQuestion].incorrect_answers[abc]) {
+          console.log("WRONG ANSWER!")  
+          next();
+          optionFalse.classList.add("false");
+        }
+  }
+
+};
+
+quizStart();
+
+
+
+
+
+
 
   window.onload = function () {
     // HINTS
