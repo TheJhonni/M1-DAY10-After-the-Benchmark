@@ -35,28 +35,62 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" type="text/css" href="styles.css" media="screen"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,400;1,600&family=Prata&family=Roboto+Mono:ital,wght@1,200&display=swap" rel="stylesheet">
+<script src="index.js"></script>
         <title>MY FIRST JS QUIZ GAME EVER</title>
     </head>
     <body>
+
+
         <div class="quiz-container">
+            
+            <form>
+                
+                <h1>OUR SUPER QUIZ</h1>
+                <p class="questionsP">What does CPU stand for?</p>
+                <input type=radio value="correct" name="choice" onClick="submitAnswer()">Central Processing Unit<br>
+                <input type=radio value="notC" name="choice" onClick="submitAnswer()">Central Process Unit<br>
+                <input type=radio value="notC" name="choice" onClick="submitAnswer()">Computer Personal Unit<br>
+                <input type=radio value="notC" name="choice" onClick="submitAnswer()">Central Processor Unit<br>
+                <button onclick="submitAnswer(choice.value, 'correct')">Submit Answer</button>
+                
+
+                <p class="questionsP">In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?</p>
+                <input type=radio value="correct" name="choice" onClick="submitAnswer()">Final<br>
+                <input type=radio value="notC" name="choice" onClick="submitAnswer()">Public<br>
+                <input type=radio value="notC" name="choice" onClick="submitAnswer()">Private<br>
+                <input type=radio value="notC" name="choice" onClick="submitAnswer()">Static<br>
+                <button onclick="submitAnswer(choice.value, 'correct')">Submit Answer</button>
+            
+                <p class="questionsP">The logo for Snapchat is a Bell</p>
+                <input type=radio value="correct" name="choice" onClick="submitAnswer()">true<br>
+                <input type=radio value="notC" name="choice" onClick="submitAnswer()">False<br>
+                <button onclick="submitAnswer(choice.value, 'correct')">Submit Answer</button>
+            
+                <p class="questionsP">Pointers were not used in the original C programming language; they were added later on in C++</p>
+                <input type=radio value="notC" name="choice" onClick="submitAnswer()">True<br>
+                <input type=radio value="correct" name="choice" onClick="submitAnswer()">False<br>
+                <button onclick="submitAnswer(choice.value, 'correct')">Submit Answer</button>
+            
+                <p class="questionsP">What is the most preferred image format used for logos in the Wikimedia database?</p>
+                <input type=radio value="notC" name="choice" onClick="submitAnswer()">.png<br>
+                <input type=radio value="correct" name="choice" onClick="submitAnswer()">.svg<br>
+                <input type=radio value="notC" name="choice" onClick="submitAnswer()">.jpeg<br>
+                <input type=radio value="notC" name="choice" onClick="submitAnswer()">.gif<br>
+                <button onclick="submitAnswer(choice.value, 'correct')">Submit Answer</button>
+            
+            </form>
+            
+            
             <div class="score hide">
                 <span id="user-score">0</span>
                 <span id="tot-score">/ tot </span>
             </div>
 
             <div class="content" id="questions">
-                <div id="questions-test"></div>
-                <div class="options">
-                    <button class="butt button-option" id="true">True</button>
-                    <button class="butt button-option" id="false">False</button>
                 </div>
             </div>
 
             <div class="controls">
-                <button class="butt button-one" id="one">1</button>
-                <button class="butt button-two" id="two">2</button>
-                <button class="butt button-three" id="three">3</button>
-                <button class="butt button-four" id="four">4</button>
             </div>
         </div>
 </body>

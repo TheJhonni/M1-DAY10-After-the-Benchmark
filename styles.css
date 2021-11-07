@@ -5,8 +5,7 @@ padding: 0;
 }
 
 body {
-    background: linear-gradient(to left, rgb(223, 132, 153), rgb(97, 58, 67), rgb(160, 68, 89));
-    background-repeat: repeat-y;
+    background: linear-gradient(to left, rgb(199, 106, 152),rgb(184, 90, 141), rgb(199, 51, 125));
     height: 90%;
     width: 90%;
     display: flex;
@@ -17,15 +16,20 @@ body {
 .quiz-container {
     width: 80vw;
     max-width: 80%;
-    background-color: rgb(180, 68, 94);
-    height: 80vh;
+    background-color: rgb(255, 72, 0);
+    height: 110vh;
     box-shadow: 0 0 10px 8px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
     text-align: center;
+}
+
+h1{
+    background-color: rgb(255, 230, 0);
+    height: 50px;
+    padding: 50px 0;
 }
 
 .score {
@@ -46,34 +50,15 @@ font-weight: 200;
     flex-direction: column;
 }
 
-.butt {
-font-size: large;
-font-weight: bold;
-box-shadow: crimson;
-background: rgb(255, 255, 255);
-border-radius: 5px;
-padding: 12px;
-color: rgb(0, 0, 0);
-margin: 8px;
-cursor: pointer;
-
-}
-
-.btn:hover {
-    color: rgb(194, 194, 194);
-    padding: 10px;
-}
-
-.wrong {
-    color: red;
-}
-
-.true {
-    color: green;
-}
-
 .hide {
     display: none;
+}
+
+.questionsP {
+    font-size: larger;
+    font-weight: bolder;
+    margin: 30px;
+    height: 30px;
 }
 
 
